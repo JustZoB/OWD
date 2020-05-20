@@ -1,0 +1,110 @@
+body {
+    font-family: Dosis;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: relative;
+    background: url(../img/header/background.png) no-repeat center;
+    padding: 0;
+    height: 920px;
+
+    &__content {
+        padding-top: 165px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__logo {
+        width: 446px;
+        height: 281px;
+    }
+    &__nav {
+        position: absolute;
+        top: 20px;
+        right: 100px;
+    }
+    &__head {
+        color: #2f1946;
+        font-size: 80px;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 1.67px;
+        text-transform: uppercase;
+    }
+    &__get-started {
+        border-radius: 25px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 15px 25px;
+        background-color: #81398b;
+    }
+    &__squares {
+        display: flex;
+        .header__square:nth-child(1) {
+            background-color: #fe4a5d;
+        }
+        .header__square:nth-child(2) {
+            background-color: #e22028;
+        }
+        .header__square:nth-child(3) {
+            background-color: #ff6c00;
+        }
+    }
+    &__square {
+        width: 235px;
+        height: 330px;
+        margin: 0 20px;
+        &__icon {
+            width: 235px;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__text {
+            width: 235px;
+            height: 110px;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+.welcome {
+    padding: 250px 0 150px 0;
+
+    &__head {
+        display: flex;
+    }
+    &__signup {
+        display: flex;
+        flex-direction: column;
+        width: 280px;
+        height: 380px;
+        .signup {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.social {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
