@@ -86,18 +86,119 @@ ul {
 
 .welcome {
     padding: 250px 0 150px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &__head {
         display: flex;
+        
+        img {
+            width: 57px;
+            height: 59px;
+        }
+        h2 {
+            color: #2f1946;
+            font-size: 52px;
+            text-transform: uppercase;
+            margin: 0 10px;
+        }
+    }
+    .quote {
+        font-size: 30px;
+        font-weight: bold;
+        max-width: 800px;
+        
+
+        &__text {
+            color: #2f1946;
+            text-align: center;
+        }
+        &__author {
+            text-align: end;
+            color: #fe4a5d;
+        }
+    }
+    &__signup__border-wrap {
+        position: relative;
+        background-image: linear-gradient(to right, #e22028 0%, #f9b416 100%);
+        padding: 8px;
+
     }
     &__signup {
         display: flex;
         flex-direction: column;
-        width: 280px;
-        height: 380px;
+        width: 300px;
+        padding: 70px;
+        background-color: white;
+        
+        h3 {
+            font-size: 38px;
+            color: #2f1946;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 6px 0 37px 0;
+        }
         .signup {
             display: flex;
             flex-direction: column;
+
+            button {
+                color: white;
+                border-radius: 4px;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: 0.8px;
+                text-transform: uppercase;
+                padding: 14px 48px;
+                margin: 6px 0;
+            }
+            &__facebook {
+                background-color: #2f53a3;
+            }
+            button[type=submit] {
+                background-color: #81398b;
+            }
+
+            &__or {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 6px;
+
+                &__hr {
+                    opacity: 0.7;
+                    width: 130px;
+                }
+                p {
+                    margin: 0 10px;
+                    color: #9b9b9b;
+                    font-size: 14px;
+                    font-weight: bold;
+                    letter-spacing: 0.7px;
+                    text-transform: uppercase;
+                }
+            }
+            input {
+                border-radius: 4px;
+                border: 2px solid #dcdcdc;
+                background-color: #ffffff;
+                color: #642f6b;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: 0.69px;
+                padding: 12px;
+                margin: 6px 0;
+            }
+            input::placeholder {
+                color: #642f6b;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: 0.69px;
+            }
+
+            
         }
     }
 }
