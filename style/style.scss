@@ -3,6 +3,9 @@ body {
     margin: 0;
     padding: 0;
 }
+button {
+    border: 0;
+}
 
 ul {
     margin: 0;
@@ -183,7 +186,7 @@ ul {
             input {
                 border-radius: 4px;
                 border: 2px solid #dcdcdc;
-                background-color: #ffffff;
+                background-color: white;
                 color: #642f6b;
                 font-size: 16px;
                 font-weight: bold;
@@ -199,6 +202,219 @@ ul {
             }
 
             
+        }
+    }
+}
+
+.circles {
+    height: 730px;
+    position: relative;
+    overflow: hidden;
+    background: #81398b url(../img/join/pattern.png) center;
+    $join-circle_size: 371px;
+    $flower-circle_size: 154px;
+    $like-circle_size: 101px;
+    $send-circle_size: 202px;
+    $genders-circle_size: 159px;
+    $languages-circle_size: 156px;
+    $gift-circle_size: 102px;
+    $translation-circle_size: 189px;
+    $chat-circle_size: 133px;
+
+    .circle__out {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+    }
+    .circle__in {
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 50%;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .circle__join {
+        width: $join-circle_size * 1.25;
+        height: $join-circle_size * 1.25;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        &__in {
+            width: $join-circle_size;
+            height: $join-circle_size;
+            background-color: white;
+            flex-direction: column;
+
+            h3 {
+                color: #67326e;
+                font-size: 60px;
+                margin: 20px 0 0 0;
+            }
+            p {
+                color: #67326e;
+                font-size: 46px;
+                text-transform: none;
+                margin: 0;
+            }
+            button {
+                color: white;
+                margin: 20px 0;
+                padding: 12px 25px;
+                font-size: 16px;
+                font-weight: bold;
+                text-transform: uppercase;
+                border-radius: 3px;
+                background-image: linear-gradient(to right, #e22028 0%, #f9b416 100%);
+            }
+        }
+    }
+    &__secondary__wrap {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 0;
+    }
+    &__secondary {
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+    .circle__flower {
+        width: $flower-circle_size * 1.25;
+        height: $flower-circle_size * 1.25;
+        top: -110px;
+        left: -870px;
+
+        &__in {
+            background-color: #f9b416;
+            width: $flower-circle_size;
+            height: $flower-circle_size;
+            font-size: 32px;
+        }
+    }
+    .circle__like {
+        width: $like-circle_size * 1.25;
+        height: $like-circle_size * 1.25;
+        top: 100px;
+        left: -700px;
+
+        &__in {
+            background-color: #fe4a5d;
+            width: $like-circle_size;
+            height: $like-circle_size;
+        }
+    }
+    .circle__send {
+        width: $send-circle_size * 1.25;
+        height: $send-circle_size * 1.25;
+        top: -180px;
+        left: -450px;
+        
+
+        &__in {
+            background-color: #ff6c00;
+            width: $send-circle_size;
+            height: $send-circle_size;
+            font-size: 32px;
+            p {
+                margin: 0 0 10px 0;
+            }
+            transform: rotate(-10deg);
+        }
+    }
+    .circle__genders {
+        width: $genders-circle_size * 1.25;
+        height: $genders-circle_size * 1.25;
+        top: 240px;
+        left: -370px;
+
+        &__in {
+            background-color: #f9b416;
+            width: $genders-circle_size;
+            height: $genders-circle_size;
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            transform: rotate(3deg);
+
+            p {
+                margin: 0 0 20px 0;
+            }
+            .number {
+                margin: 0;
+                font-size: 44px;
+            }
+        }
+    }
+    .circle__languages {
+        width: $languages-circle_size * 1.25;
+        height: $languages-circle_size * 1.25;
+        top: -230px;
+        left: 400px;
+
+        &__in {
+            background-color: #fe4a5d;
+            width: $languages-circle_size;
+            height: $languages-circle_size;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            transform: rotate(3deg);
+            p {
+                margin: 0 0 20px 0;
+            }
+            .number {
+                margin: 0 0 3px 0;
+                font-size: 40px;
+            }
+        }
+    }
+    .circle__gift {
+        width: $gift-circle_size * 1.25;
+        height: $gift-circle_size * 1.25;
+        top: 150px;
+        left: 360px;
+
+        &__in {
+            background-color: #fe4a5d;
+            width: $gift-circle_size;
+            height: $gift-circle_size;
+        }
+    }
+    .circle__translation {
+        width: $translation-circle_size * 1.25;
+        height: $translation-circle_size * 1.25;
+        top: 100px;
+        left: 700px;
+
+        &__in {
+            background-color: #ff6c00;
+            width: $translation-circle_size;
+            height: $translation-circle_size;
+            font-size: 24px;
+            transform: rotate(5deg);
+        }
+    }
+    .circle__chat {
+        width: $chat-circle_size * 1.25;
+        height: $chat-circle_size * 1.25;
+        top: -220px;
+        left: 870px;
+
+        &__in {
+            background-color: #f9b416;
+            width: $chat-circle_size;
+            height: $chat-circle_size;
         }
     }
 }
