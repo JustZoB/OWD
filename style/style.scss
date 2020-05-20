@@ -9,6 +9,27 @@ button {
     cursor: pointer;
     white-space: nowrap;
 }
+.button__mask {
+    display: block;
+    position: relative;
+}
+.button__mask::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.07);
+    opacity: 0;
+    cursor: pointer;
+}
+.button__mask:hover::after {
+    opacity: 1;
+}
+.button__mask:active::after {
+    opacity: 0;
+}
 
 ul {
     margin: 0;
@@ -24,11 +45,16 @@ a {
 .header {
     position: relative;
     background: url(../img/header/background.png) no-repeat center;
+    background-size: 100%;
     padding: 0;
-    height: 920px;
+    height: 950px;
+
+    @media (max-width: 1798px) {
+        background-size: unset;
+    }
 
     &__content {
-        padding-top: 165px;
+        padding-top: 150px;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -51,7 +77,7 @@ a {
             font-size: 18px;
             font-weight: bold;
             color: #2f1946;
-            margin: 0 5px;
+            margin: 0 10px;
         }
         i {
             color: #e22028;
@@ -64,17 +90,36 @@ a {
         font-weight: bold;
         letter-spacing: 1.67px;
         text-transform: uppercase;
+        margin: 55px 20px;
     }
-    &__get-started {
-        border-radius: 25px;
-        color: white;
-        font-size: 18px;
-        padding: 15px 25px;
-        background-color: #81398b;
-        i {
-            margin-left: 4px;
+    &__button_border {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0);
+        border: 1px solid #81398b;
+        width: 175px;
+        height: 70px;
+        border-radius: 50px;
+        margin-bottom: 25px;
+
+        button {
+            border-radius: 25px;
+            color: white;
+            font-size: 18px;
+            padding: 15px 25px;
+            background-color: #81398b;
+            i {
+                margin-left: 4px;
+            }
+        }
+
+        button:hover {
+            opacity: 0.9;
         }
     }
+    
     &__squares {
         display: flex;
         .header__square:nth-child(1) {
@@ -113,12 +158,15 @@ a {
 }
 
 .welcome {
-    padding: 250px 0 150px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 230px 0 150px 0;
 
+    &__head__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     &__head {
+        padding-top: 20px;
         display: flex;
         
         img {
@@ -151,7 +199,7 @@ a {
         position: relative;
         background-image: linear-gradient(to right, #e22028 0%, #f9b416 100%);
         padding: 8px;
-
+        margin: 0 25px;
     }
     &__signup {
         display: flex;
@@ -179,10 +227,13 @@ a {
                 letter-spacing: 0.8px;
                 text-transform: uppercase;
                 padding: 14px 48px;
-                margin: 6px 0;
+                width: 100%;
             }
             &__facebook {
                 background-color: #2f53a3;
+                i {
+                    margin-right: 5px;
+                }
             }
             button[type=submit] {
                 background-color: #81398b;
@@ -224,8 +275,36 @@ a {
                 font-weight: bold;
                 letter-spacing: 0.69px;
             }
+        }
+    }
+    &__photos__wrap {
+        margin-top: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    &__photos {
+        display: flex;
+        justify-content: center;
 
-            
+        &__column {
+            display: flex;
+            flex-direction: column;
+            img {
+                margin: 15px;
+            }
+        }
+
+        &__column:nth-child(1) {
+            margin-top: 70px;
+        }
+        &__column:nth-child(2) {
+            margin-top: 0;
+        }
+        &__column:nth-child(4) {
+            margin-top: 20px;
+        }
+        &__column:nth-child(5) {
+            margin-top: -10px;
         }
     }
 }
@@ -234,7 +313,12 @@ a {
     height: 730px;
     position: relative;
     overflow: hidden;
-    background: #81398b url(../img/join/pattern.png) center;
+    background: #81398b url(../img/join/pattern.png) no-repeat center;
+    background-size: 100%;
+
+    @media (max-width: 1798px) {
+        background-size: unset;
+    }
 
     $join-circle_size: 371px;
     $flower-circle_size: 154px;
@@ -289,11 +373,10 @@ a {
                 color: #67326e;
                 font-size: 46px;
                 text-transform: none;
-                margin: 0;
+                margin: 0 0 20px 0;
             }
             button {
                 color: white;
-                margin: 20px 0;
                 padding: 12px 25px;
                 font-size: 16px;
                 text-transform: uppercase;
@@ -470,12 +553,15 @@ a {
             font-weight: bold;
         }
         button {
-            background-color: #00cfae;
-            padding: 10px 27px;
+            background-color: rgba(0, 207, 174, 1);
+            padding: 14px 27px;
             border-radius: 0 4px 4px 0;
             text-transform: uppercase;
             font-size: 16px;
             color: white;
+        }
+        button:hover {
+            background-color: rgba(0, 207, 174, 1.07);
         }
     }
     &__nav {
@@ -501,6 +587,10 @@ a {
                 }
                 a:hover {
                     background-color: rgba(0, 0, 0, 0.05);
+                }
+                a:active {
+                    background-color: rgba(0, 0, 0, 0.1);
+                    color: rgba(47, 25, 70, 1);
                 }
             }
         }
@@ -550,8 +640,17 @@ a {
 
     ul {
         padding: 6px 0;
+
         li {
+            color: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
             padding: 10px;
+        }
+        li:hover {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        li:active {
+            color: rgba(255, 255, 255, 1);
         }
     }
 }
