@@ -52,17 +52,49 @@ a {
     @media (max-width: 1798px) {
         background-size: unset;
     }
+    @media (max-width: 1200px) {
+        background-size: cover;
+        height: 802px;
+    }
+    @media (max-width: 1024px) {
+        height: 716px;
+    }
+    @media (max-width: 768px) {
+        height: 667px;
+    }
+    @media (max-width: 320px) {
+        height: 568px;
+    }
 
     &__content {
         padding-top: 150px;
         display: flex;
         align-items: center;
         flex-direction: column;
+
+        @media (max-width: 1200px) {
+            padding-top: 125px;
+        }
     }
 
     &__logo {
-        width: 446px;
-        height: 281px;
+        $logo-width: 446px;
+        $logo-height: 281px;
+
+        width: $logo-width;
+        height: $logo-height;
+        @media (max-width: 1200px) {
+            width: $logo-width / 1.25;
+            height: $logo-height / 1.25;
+        }
+        @media (max-width: 1024px) {
+            width: $logo-width / 1.5;
+            height: $logo-height / 1.5;
+        }
+        @media (max-width: 568px) {
+            width: $logo-width / 2;
+            height: $logo-height / 2;
+        }
     }
     &__nav {
         cursor: pointer;
@@ -72,6 +104,14 @@ a {
         position: absolute;
         top: 20px;
         right: 60px;
+
+        @media (max-width: 768px) {
+            right: 40px;
+        }
+        @media (max-width: 568px) {
+            right: 20px;
+        }
+
         p {
             text-transform: uppercase;
             font-size: 18px;
@@ -83,7 +123,7 @@ a {
             color: #e22028;
         }
     }
-    &__head {
+    h1 {
         color: #2f1946;
         font-size: 80px;
         text-align: center;
@@ -91,6 +131,16 @@ a {
         letter-spacing: 1.67px;
         text-transform: uppercase;
         margin: 55px 20px;
+        @media (max-width: 1200px) {
+            font-size: 60px;
+        }
+        @media (max-width: 1024px) {
+            font-size: 45px;
+            margin: 40px 20px;
+        }
+        @media (max-width: 568px) {
+            font-size: 40px;
+        }
     }
     &__button_border {
         cursor: pointer;
@@ -133,19 +183,36 @@ a {
         }
     }
     &__square {
-        width: 235px;
-        height: 330px;
+        $square-width: 235px;
+        $square-height: 220px;
+        width: $square-width;
+        height: $square-height + $square-height / 2;
         margin: 0 20px;
+
+        @media (max-width: 1200px) {
+            width: $square-width / 1.25;
+            height: ($square-height  + $square-height / 2) / 1.25;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+
         &__icon {
-            width: 235px;
-            height: 220px;
+            width: $square-width;
+            height: $square-height;
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @media (max-width: 1200px) {
+                width: $square-width / 1.25;
+                height: $square-height / 1.25;
+            }
         }
         &__text {
-            width: 235px;
-            height: 110px;
+            width: $square-width;
+            height: $square-height / 2;
             font-size: 32px;
             font-weight: bold;
             color: white;
@@ -153,12 +220,29 @@ a {
             align-items: center;
             justify-content: center;
             background-color: rgba(0, 0, 0, 0.1);
+
+            @media (max-width: 1200px) {
+                width: $square-width / 1.25;
+                height: $square-height / 1.25 / 2;
+            }
         }
     }
 }
 
 .welcome {
     padding: 230px 0 150px 0;
+    @media (max-width: 1200px) {
+        padding: 200px 0 150px 0;
+    }
+    @media (max-width: 1024px) {
+        padding: 180px 0 150px 0;
+    }
+    @media (max-width: 768px) {
+        padding: 80px 0 150px 0;
+    }
+    @media (max-width: 320px) {
+        padding: 60px 0 150px 0;
+    }
 
     &__head__wrap {
         display: flex;
