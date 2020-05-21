@@ -12,6 +12,7 @@ button {
 .button__mask {
     display: block;
     position: relative;
+    margin: 6px 0;
 }
 .button__mask::after {
     content: '';
@@ -231,45 +232,66 @@ a {
 
 .welcome {
     padding: 230px 0 150px 0;
+
     @media (max-width: 1200px) {
-        padding: 200px 0 150px 0;
+        padding: 200px 0 120px 0;
     }
     @media (max-width: 1024px) {
-        padding: 180px 0 150px 0;
+        padding: 180px 0 100px 0;
     }
     @media (max-width: 768px) {
-        padding: 80px 0 150px 0;
+        padding: 80px 0 80px 0;
     }
     @media (max-width: 320px) {
-        padding: 60px 0 150px 0;
+        padding: 60px 0 60px 0;
     }
 
     &__head__wrap {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 0 20px;
     }
     &__head {
         padding-top: 20px;
         display: flex;
         
         img {
-            width: 57px;
-            height: 59px;
+            $heart-welcome-width: 57px;
+            $heart-welcome-height: 59px;
+
+            width: $heart-welcome-width;
+            height: $heart-welcome-height;
+
+            @media (max-width: 768px) {
+                width: $heart-welcome-width / 1.25;
+                height: $heart-welcome-height / 1.25;
+            }
         }
         h2 {
+            $welcome-head-fontsize: 52px;
+
+            font-size: $welcome-head-fontsize;
             color: #2f1946;
-            font-size: 52px;
             text-transform: uppercase;
             margin: 0 10px;
+
+            @media (max-width: 768px) {
+                font-size: $welcome-head-fontsize / 1.25;
+            }
         }
     }
     .quote {
-        font-size: 30px;
+        $welcome-quote-fontsize: 30px;
+
+        font-size: $welcome-quote-fontsize;
         font-weight: bold;
         max-width: 800px;
-        
 
+        @media (max-width: 768px) {
+            font-size: $welcome-quote-fontsize / 1.25;
+        }
+        
         &__text {
             color: #2f1946;
             text-align: center;
@@ -284,6 +306,10 @@ a {
         background-image: linear-gradient(to right, #e22028 0%, #f9b416 100%);
         padding: 8px;
         margin: 0 25px;
+
+        @media (max-width: 568px) {
+            background-image: unset;
+        }
     }
     &__signup {
         display: flex;
@@ -291,6 +317,17 @@ a {
         width: 300px;
         padding: 70px;
         background-color: white;
+
+        @media (max-width: 1024px) {
+            padding: 55px;
+        }
+        @media (max-width: 768px) {
+            padding: 40px;
+        }
+        @media (max-width: 568px) {
+            width: unset;
+            padding: 20px;
+        }
         
         h3 {
             font-size: 38px;
@@ -299,6 +336,11 @@ a {
             text-transform: uppercase;
             text-align: center;
             margin: 6px 0 37px 0;
+
+            @media (max-width: 568px) {
+                margin: 6px 0 25px 0;
+                font-size: 35px;
+            }
         }
         .signup {
             display: flex;
@@ -310,7 +352,7 @@ a {
                 font-size: 16px;
                 letter-spacing: 0.8px;
                 text-transform: uppercase;
-                padding: 14px 48px;
+                padding: 14px;
                 width: 100%;
             }
             &__facebook {
@@ -332,6 +374,10 @@ a {
                 &__hr {
                     opacity: 0.7;
                     width: 130px;
+
+                    @media (max-width: 568px) {
+                        width: 110px;
+                    }
                 }
                 p {
                     margin: 0 10px;
@@ -365,6 +411,10 @@ a {
         margin-top: 40px;
         position: relative;
         overflow: hidden;
+        
+        @media (max-width: 568px) {
+            margin-top: 0px;
+        }
     }
     &__photos {
         display: flex;
@@ -375,6 +425,10 @@ a {
             flex-direction: column;
             img {
                 margin: 15px;
+            }
+
+            @media (max-width: 568px) {
+                display: none;
             }
         }
 
